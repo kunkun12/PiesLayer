@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- <title>专题图</title>
+ <title>ArcGIS API for Javascript 扩展值PieLayer API </title>
      <link rel="stylesheet" href="http://js.arcgis.com/3.6/js/esri/css/esri.css">
     <style type="text/css">
-html,body,#map{
-	height: 100%;
+html,body{
+
 	width: 100%;
+  padding: 0px;
+  margin: 0;
+}
+header,#map{
+  width: 80%;
+  margin: 20px auto;
+}
+#map{
+  height: 630px;
 }
     </style>
-  <script type="text/javascript" src='chart.js'></script>
+      <script>
+      var dojoConfig = { 
+        parseOnLoad: true,
+        packages: [{
+          "name": "extras",
+          "location": location.pathname.replace(/\/[^/]+$/, '') + "/extras"
+        }]
+      };
+    </script>
      <script src="http://js.arcgis.com/3.6/"></script>
-     <script type="text/javascript" src='CanvasChart.js'></script>
+     <script type="text/javascript">
+    require(["esri/map", "esri/layers/ArcGISTiledMapServiceLayer", "dojo/dom", "dojo/on", "dojo/dom-class", "extras/PiesLayer","dojo/domReady!"],
+  function(Map, ArcGISTiledMapServiceLayer, dom, on, domClass,PiesLayer) {
+    var map = new Map("map", {
+      basemap: "topo",
+      center: [100.69828872684525, 34.24237112174851], // long, lat
+      zoom: 5,
+      sliderStyle: "small"
+    });
+ var data1={x: 13567611.673366752,y:5174359.8470072355,attributes:{'name':'AA地区','指标一':30,'指标二':40,'指标三':50,'指标四':60,'指标五':70}};
+ var data2={x: 12041317.092568759,y:4988464.994217737,attributes:{'name':'BB地区','指标一':50,'指标二':60,'指标三':20,'指标四':160,'指标五':80}};
+ var data3={x: 11131410.707862262,y:4328049.069833989,attributes:{'name':'CC地区','指标一':50,'指标二':60,'指标三':120,'指标四':60,'指标五':80}};
+ var data4={x: 13303445.303613253,y:3594253.5982964924,attributes:{'name':'DD地区','指标一':50,'指标二':60,'指标三':20,'指标四':60,'指标五':80}};
+ var data5={x: 11782042.69262551,y:3061028.8889792445,attributes:{'name':'EE地区','指标一':250,'指标二':60,'指标三':120,'指标四':60,'指标五':80}};
+ var data6={x: 10485670.692909265,y:4010071.03216774,attributes:{'name':'FF地区','指标一':150,'指标二':60,'指标三':20,'指标四':60,'指标五':80}};
+ var data7={x: 8749021.410270521,y:5052060.601750986,attributes:{'name':'GG地区','指标一':50,'指标二':160,'指标三':20,'指标四':60,'指标五':80}};
+ var colors={'指标一':"#F7464A",'指标二':'#E2EAE9','指标三':'#02EAF9','指标四':'#D4CCC5','指标五':'#D4CC00'};
+
+ var pielayer= new PiesLayer({colors:colors,r:100,data:[data1,data2,data3,data4,data5]});
+        map.addLayer(pielayer);
+       //or 有也可以通过 pielayer.add()来动态地添加Pie 比如
+       pielayer.add(data6);
+       pielayer.add(data7);
+       //在click ，mouse-move ，mouse-over，mouse-down mouse-up事件里 可以获得被点击哪一个Pie的 哪一部分 如下
+       on(pielayer,'click',function(e){
+        var piedata=e.piedata; //通过e.piedata可以获得当前区域的所有的数据的集合如{'name':'AA地区','指标一':30,'指标二':40,'指标三':50,'指标四':60,'指标五':70}
+        var  name=piedata.name;
+        var slecetedata=e.slecetedata;    
+        map.infoWindow.setContent(name+"   "+JSON.stringify(slecetedata));
+         map.infoWindow.show(e.mapPoint);
+       }); 
+  });
+     </script>
 <head></head>
 <body>
-	
+  <header><h1>ArcGIS API for Javascript 扩展值PieLayer API </h1></header>
 	<div id='map'></div>
 </body>
 </html>

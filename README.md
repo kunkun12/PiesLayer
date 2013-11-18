@@ -12,6 +12,7 @@ PiesLayer 是扩展的GraphicsLayer，因此GraphicsLayer中原有的方法均�
 		{'name1':"#F7464A",'name2':'#E2EAE9','name3':'#02EAF9','name4':'#D4CCC5'}
 	linecolor 字符串类型 可选。饼图边框的颜色，可以为16进制形式，如#FFFFFF，也可以使用颜色的名字，如red，还可以通过rgba构造如'rgba(200, 200, 200, 0.75)'，默认是值为'rgba(229, 205, 205, 0.78)'
 	selectedlinecolor 字符串类型 可选。饼图被选中部分的边框颜色。默认值为 "#0F66E9".
+	spatialReference 空间参考，默认为web mecartor。
 	data 对象数组 可选 。作为饼图的数据的数组。格式如
 
   		 [{
@@ -26,7 +27,7 @@ PiesLayer 是扩展的GraphicsLayer，因此GraphicsLayer中原有的方法均�
 			}
 			]
 			
-spatialReference 空间参考，默认为web mecartor。
+
 
 主要的方法(仅列出与GraphicsLayer差别的方法)。
 	add(p) 增加pie到Layer中，p的格式为{x: 13567611.673366752,y:5174359.8470072355,attributes:{'name':'AA地区','指标一':30,'指标二':40,'指标三':50,'指标四':60,'指标五':70}}

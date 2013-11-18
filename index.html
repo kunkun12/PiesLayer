@@ -35,7 +35,10 @@ header,#map{
       basemap: "topo",
       center: [100.69828872684525, 34.24237112174851], // long, lat
       zoom: 5,
-      sliderStyle: "small"
+      sliderStyle: "small",
+        wrapAround180:false,
+        maxZoom:8,
+        minZoom:4
     });
  var data1={x: 13567611.673366752,y:5174359.8470072355,attributes:{'name':'AA地区','指标一':30,'指标二':40,'指标三':50,'指标四':60,'指标五':70}};
  var data2={x: 12041317.092568759,y:4988464.994217737,attributes:{'name':'BB地区','指标一':50,'指标二':60,'指标三':20,'指标四':160,'指标五':80}};
@@ -63,7 +66,8 @@ header,#map{
      </script>
 <head></head>
 <body>
-  <header><h1>ArcGIS API for Javascript 扩展值PieLayer API </h1></header>
+
+  <header><h1  style='float:left'>ArcGIS API for Javascript 扩展：PieLayer </h1>  <a style='float:right;cursor: pointer;' title='到github了解更多信息' target='_blank' href='https://github.com/kunkun01/PiesLayer'><img style='width:40px;height:40px;'  src="./images/githublog.png"/></a><div style="clear:both"></div></header>
 	<div id='map'></div>
 </body>
 </html>

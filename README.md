@@ -1,4 +1,6 @@
+![PiesLayer](images/logo.gif)
 #可交互的饼状图 PeiLayer
+####[演示地址](http://kunkun01.github.io/PiesLayer)
 ##PiesLayer是什么?
 一个基于ArcGIS API for Javascript 实现的饼图渲染图层
 

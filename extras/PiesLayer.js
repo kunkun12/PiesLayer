@@ -213,7 +213,7 @@ define(["dojo/_base/declare", "esri/layers/GraphicsLayer", "esri/geometry/Point"
     onMouseDown: function(e) {
         this._extenteventarg(e);
     },
-    onMouseUp: function() {
+    onMouseUp: function(e) {
          this._extenteventarg(e);
     },
     _extenteventarg:function(e){

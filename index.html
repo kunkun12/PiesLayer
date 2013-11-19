@@ -55,7 +55,7 @@ header,#map{
        pielayer.add(data6);
        pielayer.add(data7);
        //在click ，mouse-move ，mouse-over，mouse-down mouse-up事件里 可以获得被点击哪一个Pie的 哪一部分 如下
-       on(pielayer,'click',function(e){
+       on(pielayer,'mouse-move',function(e){
         var piedata=e.piedata; //通过e.piedata可以获得当前区域的所有的数据的集合如{'name':'AA地区','指标一':30,'指标二':40,'指标三':50,'指标四':60,'指标五':70}
         var  name=piedata.name;
         var slecetedata=e.slecetedata;    

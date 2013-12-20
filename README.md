@@ -2,7 +2,7 @@
 #可交互的饼状地图 PeisLayer
 ####[演示地址](http://kunkun01.github.io/PiesLayer)
 ##PiesLayer是什么?
-一个基于ArcGIS API for Javascript 实现的饼图渲染图层
+一个基于ArcGIS API for Javascript 实现的饼图渲染图层，作为一个Layer提供
 
 ##PiesLayer介绍？
 

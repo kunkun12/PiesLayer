@@ -1,10 +1,10 @@
 ![PiesLayer](images/logo.gif)
-#可交互的饼状地图 PiesLayer
-####[演示地址](http://kunkun12.github.io/PiesLayer)
-##PiesLayer是什么?
+# 可交互的饼状地图 PiesLayer
+#### [演示地址](http://kunkun12.github.io/PiesLayer)
+## PiesLayer是什么?
 一个基于ArcGIS API for Javascript 实现的饼图渲染图层，作为一个Layer提供
 
-##PiesLayer介绍？
+## PiesLayer介绍？
 
 * 支持AMD方式的加载
 * 使用Canvas动态生成图片，需要浏览器支持Canvas，IE8+，FF，Chrome，Safari
@@ -58,7 +58,7 @@
 * 
 ### 事件
     与GraphicsLayer的事件一致。主要对click ，mouse-move ，mouse-over，mouse-down mouse-up等事件的参数进行了扩展。可以获得 被选择饼图的数据源，以及被选择部分的数据。通过监听这些事件获得被选择部分的数据以达到交互的目的。如可以进行弹出infowindow 等其他操作
-##示例
+## 示例
 ```javascript
 //首先在dojoConfig里面配置 扩展包的路径参数
  var dojoConfig = { 
